@@ -1,12 +1,12 @@
-num1 = 36
-num2 = 60
-a = num1
-b = num2
+def hcf(a, b):
+    if max(a, b) % min(a, b) == 0:
+        return min(a, b)
+    for i in range(1 + min(a, b) // 2, 0, -1):
+        if a % i == b % i == 0:
+            return i
 
-while num1 != num2:
-    if num1 > num2:
-        num1 -= num2
-    else:
-        num2 -= num1
 
-print("Hcf of", a, "and", b, "is", num1)
+first = 23
+second = 69
+
+print('HCF of', first, 'and', second, 'is', hcf(first, second))
