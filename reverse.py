@@ -1,9 +1,12 @@
-num = 1234
-temp = num
-reverse = 0
-while num > 0:
-    remainder = num % 10
-    reverse = (reverse * 10) + remainder
-    num = num // 10
+def reverse_digit(arr, l, n=0):
+    if n == l:
+        return arr
+    arr[n], arr[-1*(n+1)] = arr[-1*(n+1)], arr[n]
+    return reverse_digit(arr, l, n + 1)
 
-print(reverse)
+
+num = 12345
+arr = list(str(num))
+arr = reverse_digit(arr, len(arr)//2)
+s = ""
+print(int(s.join(arr)))
